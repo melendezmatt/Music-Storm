@@ -10,7 +10,7 @@ module.exports = {
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
    return queryInterface.addColumn('Users', 'profileImageUrl', {
-     type: Sequelize.STRING,
+     type: Sequelize.STRING(255),
      allowNull: true
    })
   },
