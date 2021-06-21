@@ -15,7 +15,8 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <div className='title'> MusicStorm </div>
+      <Navigation className='nav-bar' isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route path="/login">
