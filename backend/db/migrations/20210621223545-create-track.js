@@ -13,11 +13,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model:'Users'}
       },
-      albumId: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: { model:'Tracks'}
-      },
       url: {
         allowNull: false,
         type: Sequelize.STRING(255)
