@@ -43,14 +43,14 @@ module.exports = {
         email: 'oliviarodrigo@gmail.com',
         username: 'oliviarodrigo',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        profileImageUrl:'profile-images/ariana-grande.jpg',
+        profileImageUrl:'profile-images/olivia-rodrigo.jpg',
         bio: 'Hello! My name is Olivia Rodrigo! This is my bio.'
       },
       {
         email: 'jcole@gmail.com',
         username: 'jcole',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        profileImageUrl:'profile-images/ariana-grande.jpg',
+        profileImageUrl:'profile-images/jcole.jpg',
         bio: 'Hello! My name is J Cole! This is my bio.'
       },
     ], {});
