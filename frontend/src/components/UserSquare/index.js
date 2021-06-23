@@ -1,20 +1,20 @@
 import { NavLink } from 'react-router-dom';
-import './UserList.css';
+import './UserSquare.css';
 
-const IndividualUser = ({ user }) => {
+const UserSquare = ({ user }) => {
     return (
-        <div >
-            <div >
+        <div className='user-square'>
+            <div className='user-info'>
                 <div>
                     <img
                         style={{ width: "200px", height: "200px", borderRadius: "50%", objectFit: "cover" }}
                         src={user?.profileImageUrl}
-                        alt="profile"
+                        alt="artist-profile"
                     />
                 </div>
                 <div className='profileLink'>
                     <NavLink to={`/users/${user.id}`}>
-                        {user.username}
+                        {user.artistName}
                     </NavLink>
                 </div>
             </div>
