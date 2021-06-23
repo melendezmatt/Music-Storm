@@ -11,7 +11,7 @@ export const getUsers = () => async(dispatch) => {
     dispatch(setUsers(users))
 }
 
-const initialState = {user: null}
+const initialState = {}
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -30,4 +30,4 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 
-export default usersReducer; 
+export default usersReducer;
