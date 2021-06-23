@@ -39,6 +39,11 @@ function Navigation({ isLoaded }){
         </NavLink>
         {isLoaded && sessionLinks}
       </li>
+      <li>
+        <NavLink exact to="/users">
+            Users
+        </NavLink>
+      </li>
     </ul>
   );
 }

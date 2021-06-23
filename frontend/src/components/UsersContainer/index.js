@@ -8,7 +8,7 @@ import './UsersContainer.css'
 const UsersContainer = () => {
     const dispatch = useDispatch();
     const usersArray = useSelector((state) => {
-        return Object.values(state.allUsers)
+        return Object.values(state.users)
     })
 
     useEffect(() => {
