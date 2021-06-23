@@ -8,7 +8,9 @@ const UserSquare = ({ user }) => {
                 <div>
                     <img
                         style={{ width: "200px", height: "200px", borderRadius: "50%", objectFit: "cover" }}
-                        src={user?.profileImageUrl}
+                        src={user.profileImageUrl ?
+                            user.profileImageUrl :
+                            "https://smhlancers.org/wp-content/uploads/2016/06/profile-placeholder-300x300.png" }
                         alt="artist-profile"
                     />
                 </div>
@@ -22,4 +24,4 @@ const UserSquare = ({ user }) => {
     )
 }
 
-export default UserList;
+export default UserSquare;

@@ -5,6 +5,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import UsersContainer from "./components/UsersContainer";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,15 +16,18 @@ function App() {
 
   return (
     <>
-      <div className='title'> MusicStorm </div>
       <Navigation className='nav-bar' isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login">
+          <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/users">
+            <h1> Featured Artists</h1>
+            <UsersContainer />
           </Route>
         </Switch>
       )}
