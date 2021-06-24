@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import UsersContainer from "./components/UsersContainer";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,9 @@ function App() {
           <Route exact path="/users">
             <h1> Featured Artists</h1>
             <UsersContainer />
+          </Route>
+          <Route exact path="/users/:id">
+            <UserProfile />
           </Route>
         </Switch>
       )}

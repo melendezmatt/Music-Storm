@@ -61,6 +61,27 @@ router.get(
   })
 );
 
+router.put(
+  '/:id',
+  asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const {username, bio, artistName}  = req.body;
+
+    const currUser = await User.update({
+      username,
+      bio,
+      artistName
+    }, {
+      where: {
+        id
+      }
+    })
+
+    res.json(currUser)
+
+  })
+)
+
 
 
 module.exports = router;

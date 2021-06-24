@@ -1,15 +1,49 @@
+import { csrfFetch } from './csrf'
+
 const SET_USERS = 'users/SET_USERS';
+const GET_USER = 'users/GET_USER';
+const UPDATE_USER = 'users/UPDATE_USER'
 
 const setUsers = (users) => ({
     type:SET_USERS,
     users
 })
 
+const setOneUser = (user) => ({
+    type: GET_USER,
+    user,
+});
+
 export const getUsers = () => async(dispatch) => {
-    const res = await fetch('/api/users');
-    const users = await res.json()
-    dispatch(setUsers(users))
+    const res = await csrfFetch('/api/users');
+
+    if (res.ok) {
+        const users = await res.json()
+        dispatch(setUsers(users))
+    }
 }
+
+export const getOneUser = (id) => async (dispatch) => {
+    const res = await csrfFetch(`/api/users/${id}`);
+
+    if (res.ok) {
+      const user = await res.json();
+      dispatch(setOneUser(user));
+    }
+};
+
+export const editUser = (payload) => async (dispatch) => {
+    const res = await csrfFetch(`/api/users/${payload.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      const user = await res.json();
+      dispatch(setOneUser(user));
+      return user
+    }
+};
 
 const initialState = {}
 
@@ -24,6 +58,12 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...allUsers
+            };
+        case GET_USER:
+        case UPDATE_USER:
+            return {
+                ...state,
+                [action.user.id] : action.user
             };
         default:
             return state
