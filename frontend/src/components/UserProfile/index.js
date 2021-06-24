@@ -1,33 +1,9 @@
-// import { useParams } from 'react-router-dom';
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-
-// import { getUsers } from '../../store/users';
-// import './UserProfile.css'
-
-// const UserProfile = () => {
-//     // const id = useParams()
-//     const dispatch = useDispatch();
-//     const usersArray = useSelector((state) => {
-//         return Object.values(state.users)
-//     })
-
-//     useEffect(() => {
-//         dispatch(getUsers())
-//     }, [dispatch])
-
-//     return (
-//         console.log(usersArray)
-//     )
-// }
-
-// export default UserProfile;
-
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getUsers, getOneUser } from '../../store/users';
+import { getOneUser } from '../../store/users';
 import './UserProfile.css'
+import UpdateProfile from '../UpdateProfile'
 
 const UserProfile = () => {
     const { id } = useParams()
@@ -40,18 +16,24 @@ const UserProfile = () => {
     useEffect(() => {
         dispatch(getOneUser(id))
         setShowEditForm(false)
-    }, [dispatch])
+    }, [dispatch, id])
 
+    let content = null;
 
+    //{&& (currArtist.id === state.user.id) }
     if (showEditForm) {
         content = (
-            <UpdateProfile user={user} hideForm={() => setShowEditForm(false)}/>
+            <>
+                <h3> EDIT FORM OPEN!!!!</h3>
+                <UpdateProfile user={currArtist} hideForm={() => setShowEditForm(false)} />
+            </>
         )
     } else {
         content = (
-            <h3>EDIT FORM CLOSED!!!! where track component would be???</h3>
+            <h3>EDIT FORM CLOSED!!!! where track component would be!!</h3>
         )
     }
+
     return (
         <>
             <div>
@@ -62,6 +44,7 @@ const UserProfile = () => {
                     src={`/${currArtist?.profileImageUrl}`}
                     alt='profileImage'>
                 </img>
+                <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
             </div>
             <div>
                 {content}
