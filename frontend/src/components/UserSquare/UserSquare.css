@@ -1,0 +1,9 @@
+.user-square {
+    padding: 10px;
+    border: 10px;
+}
+
+.profileLink {
+    display: flex; 
+    justify-content: center;
+}

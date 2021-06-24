@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 import './UserSquare.css';
 
 const UserSquare = ({ user }) => {
-    console.log(user)
     return (
         <div className='user-square'>
             <div className='user-info'>

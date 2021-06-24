@@ -20,7 +20,7 @@ const UserProfile = () => {
 
     let content = null;
 
-    //{&& (currArtist.id === state.user.id) }
+    //{&& (currArtist.id === state.user.id) } ??? how do I only make sure these buttons show up only for the logged in user
     if (showEditForm) {
         content = (
             <>
@@ -34,6 +34,7 @@ const UserProfile = () => {
         )
     }
 
+
     return (
         <>
             <div>
@@ -45,6 +46,7 @@ const UserProfile = () => {
                     alt='profileImage'>
                 </img>
                 <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
+
             </div>
             <div>
                 {content}
