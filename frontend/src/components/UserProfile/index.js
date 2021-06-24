@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getOneUser } from '../../store/users';
 import './UserProfile.css'
 import UpdateProfile from '../UpdateProfile'
+import Track from '../Track';
 
 const UserProfile = () => {
     const { id } = useParams()
@@ -29,7 +30,10 @@ const UserProfile = () => {
         )
     } else {
         content = (
-            <h3>EDIT FORM CLOSED!!!! where track component would be!!</h3>
+            <>
+                <h3>EDIT FORM CLOSED!!!! where track component would be!!</h3>
+                <Track />
+            </>
         )
     }
 

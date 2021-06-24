@@ -25,7 +25,6 @@ const UpdateProfile = ({user, hideForm}) => {
 
         const updatedArtist = await dispatch(editUser(payload));
         if (updatedArtist) {
-          debugger
             hideForm();
         }
     };

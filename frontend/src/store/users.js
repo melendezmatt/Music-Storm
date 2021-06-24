@@ -45,7 +45,6 @@ export const editUser = (payload) => async (dispatch) => {
 
     if (res.ok) {
       const user = await res.json();
-      debugger
       dispatch(setOneUser(user));
       return user
     }
@@ -75,11 +74,15 @@ const usersReducer = (state = initialState, action) => {
                 ...allUsers
             };
         case GET_USER:
-            debugger
             return {
                 ...state,
                 [action.user.id] : action.user
             };
+        case GET_TRACKS:
+            return {
+                ...state,
+                tracks: action.tracks
+            }
         default:
             return state
     }

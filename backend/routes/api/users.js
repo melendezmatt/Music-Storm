@@ -75,8 +75,23 @@ router.put(
         bio,
         artistName
     })
+    console.log(currUser)
     res.json(currUser)
   })
 )
+
+router.get(
+  '/:id/tracks',
+  asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const allTracks = await Track.findAll(
+    {
+        where: {
+      'userId' : id
+      }
+    });
+    res.json(allTracks)
+  })
+);
 
 module.exports = router;
