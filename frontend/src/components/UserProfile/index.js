@@ -9,6 +9,7 @@ const UserProfile = () => {
     const { id } = useParams()
     const dispatch = useDispatch();
     const [showEditForm, setShowEditForm] = useState(false)
+    const loggedInUser = useSelector((state) => state.session.user)
     const currArtist= useSelector((state) => {
         return state.users[id]
     })
@@ -19,9 +20,7 @@ const UserProfile = () => {
     }, [dispatch, id])
 
     let content = null;
-
-    //{&& (currArtist.id === state.user.id) } ??? how do I only make sure these buttons show up only for the logged in user
-    if (showEditForm) {
+    if (showEditForm && (loggedInUser?.id === currArtist?.id)) {
         content = (
             <>
                 <h3> EDIT FORM OPEN!!!!</h3>
@@ -45,8 +44,7 @@ const UserProfile = () => {
                     src={`/${currArtist?.profileImageUrl}`}
                     alt='profileImage'>
                 </img>
-                <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
-
+                { (loggedInUser?.id === currArtist?.id) ? <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button> : null}
             </div>
             <div>
                 {content}
