@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Track } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const router = express.Router();
@@ -63,25 +63,20 @@ router.get(
 
 router.put(
   '/:id',
-  requireAuth, 
+  requireAuth,
   asyncHandler(async (req, res) => {
     const id = req.params.id
+    const user = await User.findByPk(id)
+
     const {username, bio, artistName}  = req.body;
 
-    const currUser = await User.update({
-      username,
-      bio,
-      artistName
-    }, {
-      where: {
-        id
-      }
+    const currUser = await user.update({
+        username,
+        bio,
+        artistName
     })
-
     res.json(currUser)
   })
 )
-
-
 
 module.exports = router;
