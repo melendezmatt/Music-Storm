@@ -32,7 +32,7 @@ const UpdateProfile = ({user, hideForm}) => {
     const handleCancelClick = (e) => {
         e.preventDefault();
         hideForm();
-      };
+    };
 
     return (
         <>

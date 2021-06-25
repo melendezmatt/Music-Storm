@@ -14,10 +14,10 @@ const EditTrack = () => {
         return state.users.track
     })
 
-    const [title, setTitle] = useState(currTrack.title)
-    const [albumTitle, setAlbumTitle] = useState(currTrack.albumTitle)
-    const [albumImageUrl, setAlbumImageUrl] = useState(currTrack.albumImageUrl)
-    const [url, setUrl] = useState(currTrack.url)
+    const [title, setTitle] = useState(currTrack?.title)
+    const [albumTitle, setAlbumTitle] = useState(currTrack?.albumTitle)
+    const [albumImageUrl, setAlbumImageUrl] = useState(currTrack?.albumImageUrl)
+    const [url, setUrl] = useState(currTrack?.url)
 
     const updateTitle= (e) => setTitle(e.target.value);
     const updateAlbumTitle = (e) => setAlbumTitle(e.target.value);

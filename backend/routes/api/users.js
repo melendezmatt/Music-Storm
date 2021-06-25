@@ -124,6 +124,7 @@ router.post(
     const { id } = req.params;
     const user = User.findByPk(id);
 
+    const { albumTitle, title } = req.body;
     //singleMulterUpload, url and image
     res.json(user)
   })
@@ -136,8 +137,8 @@ router.delete(
     const { trackId } = req.params;
     const track = await Track.findByPk(trackId);
 
-    await Track.destory(track)
-    res.json(currTrack)
+    await Track.destroy(track)
+    res.send(200)
   })
 )
 

@@ -4,6 +4,7 @@ const SET_USERS = 'users/SET_USERS';
 const GET_USER = 'users/GET_USER';
 const GET_TRACKS = 'users/GET_TRACKS'
 const GET_SINGLE = 'users/GET_SINGLE'
+const REMOVE_SINGLE = 'user/REMOVE_SINGLE'
 
 const setUsers = (users) => ({
     type:SET_USERS,
@@ -24,6 +25,12 @@ const setOneTrack = (track) => ({
     type: GET_SINGLE,
     track,
 });
+
+const deleteOneTrack = (track) => ({
+    type: REMOVE_SINGLE,
+    track,
+})
+
 
 export const getUsers = () => async(dispatch) => {
     const res = await csrfFetch('/api/users');
@@ -88,6 +95,17 @@ export const editOneTrack = (id, payload) => async (dispatch) => {
     }
 };
 
+export const removeOneTrack = (id, trackId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/users/${id}/tracks/${trackId}`, {
+        method: 'DELETE'
+    });
+
+    if (res.ok) {
+        const track = await res.json()
+        dispatch(deleteOneTrack(track))
+    }
+}
+
 
 const initialState = {}
 
@@ -118,6 +136,10 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 track: action.track
             }
+        case REMOVE_SINGLE:
+            const newState = { ...state };
+            delete newState[action.track];
+            return newState;
         default:
             return state
     }
