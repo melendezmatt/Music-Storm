@@ -39,7 +39,7 @@ const UserProfile = () => {
                 <h2> {currArtist?.bio} </h2>
                 <img
                     style={{ width: "200px", height: "200px", borderRadius: "50%", objectFit: "cover" }}
-                    src={`/${currArtist?.profileImageUrl}`}
+                    src={currArtist?.profileImageUrl}
                     alt='profileImage'>
                 </img>
                 { (loggedInUser?.id === currArtist?.id) ? <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button> : null}

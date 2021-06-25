@@ -31,9 +31,10 @@ const Track = () => {
                     <p>{track.albumTitle}</p>
                     <img
                     style={{ width: "150px", height: "150px", objectFit: "cover" }}
-                    src={`/${track?.albumImageUrl}`}
+                    src={track.albumImageUrl}
                     alt='albumImage'/>
-                    <audio controls src={track.url} type="type/mpeg" />
+                    <audio controls src={track.url} type="type/mpeg"/>
+                    { (loggedInUser?.id === currArtist?.id) ? <><button>Edit</button> <button>Delete Track</button></>: null}
                 </div>
             ))}
         </div>

@@ -16,7 +16,7 @@ module.exports = {
         email: 'arianagrande@gmail.com',
         username: 'arianagrande',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        profileImageUrl: 'profile-images/ariana-grande.jpg',
+        profileImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/ariana-grande.jpg',
         bio: 'Hello! My name is Ariana Grande! This is my bio.',
         artistName: 'Ariana Grande'
       },
@@ -24,7 +24,7 @@ module.exports = {
         email: 'blackpink@gmail.com',
         username: 'blackpink',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        profileImageUrl:'profile-images/blackpink.jpg',
+        profileImageUrl:'https://music-storm-bucket.s3.us-west-1.amazonaws.com/blackpink.jpg',
         bio: 'Hello! We are BLACKPINK! This is our bio.',
         artistName: 'BLACKPINK'
       },
@@ -32,7 +32,7 @@ module.exports = {
         email: 'dualipa@gmail.com',
         username: 'dualipa',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        profileImageUrl:'profile-images/dua-lipa.jpg',
+        profileImageUrl:'https://music-storm-bucket.s3.us-west-1.amazonaws.com/dua-lipa.jpg',
         bio: 'Hello! My name is Dua Lipa! This is my bio.',
         artistName: 'Dua Lipa'
       },
@@ -40,7 +40,7 @@ module.exports = {
         email: 'chancetherapper@gmail.com',
         username: 'chancetherapper',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        profileImageUrl:'profile-images/chance-the-rapper.jpg',
+        profileImageUrl:'https://music-storm-bucket.s3.us-west-1.amazonaws.com/chance-the-rapper.jpg',
         bio: 'Hello! My name is Chance The Rapper! This is my bio.',
         artistName: 'Chance The Rapper'
       },
@@ -48,7 +48,7 @@ module.exports = {
         email: 'oliviarodrigo@gmail.com',
         username: 'oliviarodrigo',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        profileImageUrl:'profile-images/olivia-rodrigo.jpg',
+        profileImageUrl:'https://music-storm-bucket.s3.us-west-1.amazonaws.com/olivia-rodrigo.jpg',
         bio: 'Hello! My name is Olivia Rodrigo! This is my bio.',
         artistName: 'Olivia Rodrigo'
       },
@@ -56,7 +56,7 @@ module.exports = {
         email: 'jcole@gmail.com',
         username: 'jcole',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        profileImageUrl:'profile-images/jcole.jpg',
+        profileImageUrl:'https://music-storm-bucket.s3.us-west-1.amazonaws.com/jcole.jpg',
         bio: 'Hello! My name is J Cole! This is my bio.',
         artistName: 'J Cole'
       },
