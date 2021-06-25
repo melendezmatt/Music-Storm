@@ -26,12 +26,13 @@ const SingleTrack = () => {
                 <p>{currArtist?.artistName}</p>
             </NavLink>
             <p>{currTrack?.albumTitle}</p>
+            <p>{currTrack.title}</p>
             <img
                 style={{ width: "150px", height: "150px", objectFit: "cover" }}
                 src={currTrack?.albumImageUrl}
                 alt='albumImage'/>
             <audio controls src={currTrack?.url} type="type/mpeg"/>
-            { (loggedInUser?.id === currArtist?.id) ? <><button>Edit</button> <button>Delete Track</button></>: null}
+            {(loggedInUser?.id === currArtist?.id) ? <><button>Edit</button> <button>Delete Track</button></>: null}
         </div>
     )
 }
