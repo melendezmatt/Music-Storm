@@ -8,7 +8,7 @@ module.exports = {
         email: 'childishgambino@gmail.com',
         username: 'childishgambino',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        profileImageUrl: 'profile-images/childish-gambino.jpg',
+        profileImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/childish-gambino.jpg',
         bio: 'Hello! My name is Childish Gambino! This is my bio.',
         artistName: 'Childish Gambino'
       },
