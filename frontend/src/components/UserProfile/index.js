@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getOneUser } from '../../store/users';
 import './UserProfile.css'
 import UpdateProfile from '../UpdateProfile'
+import Track from '../Track';
 
 const UserProfile = () => {
     const { id } = useParams()
@@ -19,17 +20,15 @@ const UserProfile = () => {
         setShowEditForm(false)
     }, [dispatch, id])
 
+    console.log(currArtist)
     let content = null;
     if (showEditForm && (loggedInUser?.id === currArtist?.id)) {
         content = (
-            <>
-                <h3> EDIT FORM OPEN!!!!</h3>
-                <UpdateProfile user={currArtist} hideForm={() => setShowEditForm(false)} />
-            </>
+            <UpdateProfile user={currArtist} hideForm={() => setShowEditForm(false)} />
         )
     } else {
         content = (
-            <h3>EDIT FORM CLOSED!!!! where track component would be!!</h3>
+            <Track />
         )
     }
 
@@ -41,7 +40,7 @@ const UserProfile = () => {
                 <h2> {currArtist?.bio} </h2>
                 <img
                     style={{ width: "200px", height: "200px", borderRadius: "50%", objectFit: "cover" }}
-                    src={`/${currArtist?.profileImageUrl}`}
+                    src={currArtist?.profileImageUrl}
                     alt='profileImage'>
                 </img>
                 { (loggedInUser?.id === currArtist?.id) ? <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button> : null}

@@ -10,113 +10,113 @@ module.exports = {
     return queryInterface.bulkInsert('Tracks', [
       {
         userId:users[0].id,
-        url: '../../tracks/sweatpants.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/sweatpants.mp3',
         title: 'IV. Sweatpants',
-        albumImageUrl: 'album-images/because-the-internet.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/because-the-internet.jpg',
         albumTitle: 'Because The Internet',
 
       },
       {
         userId:users[0].id,
-        url: '../../tracks/the-worst-guys.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/the-worst-guys.mp3',
         title: 'I. The Worst Guys',
-        albumImageUrl: 'album-images/because-the-internet.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/because-the-internet.jpg',
         albumTitle: 'Because The Internet',
 
       },
       {
         userId:users[1].id,
-        url: '../../tracks/break-up-with-your-girlfriend.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/break-up-with-your-girlfriend.mp3',
         title: "break up with your girlfriend, i'm bored",
-        albumImageUrl: 'album-images/thank-u-next.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/thank-u-next.jpg',
         albumTitle: 'thank u, next',
 
       },
       {
         userId:users[1].id,
-        url: '../../tracks/nasa.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/nasa.mp3',
         title: 'NASA',
-        albumImageUrl: 'album-images/thank-u-next.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/thank-u-next.jpg',
         albumTitle: 'thank u, next',
 
       },
       {
         userId:users[2].id,
-        url: '../../tracks/lovesick-girls.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/lovesick-girls.mp3',
         title: 'Lovesick Girls',
-        albumImageUrl: 'album-images/the-album.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/the-album.jpg',
         albumTitle: 'The Album',
 
       },
       {
         userId:users[2].id,
-        url: '../../tracks/pretty-savage.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/pretty-savage.mp3',
         title: 'Pretty Savage',
-        albumImageUrl: 'album-images/the-album.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/the-album.jpg',
         albumTitle: 'The Album',
 
       },
       {
         userId:users[3].id,
-        url: '../../tracks/dont-start-now.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/dont-start-now.mp3',
         title: "Don't Start Now",
-        albumImageUrl: 'album-images/future-nostalgia.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/future-nostalgia.jpg',
         albumTitle: 'Future Nostalgia',
 
       },
       {
         userId:users[3].id,
-        url: '../../tracks/physical.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/physical.mp3',
         title: 'Physical',
-        albumImageUrl: 'album-images/future-nostalgia.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/future-nostalgia.jpg',
         albumTitle: 'Future Nostalgia',
 
       },
       {
         userId:users[4].id,
-        url: '../../tracks/all-night.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/all-night.mp3',
         title: 'All Night',
-        albumImageUrl: 'album-images/coloring-book.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/coloring-book.jpg',
         albumTitle: 'Coloring Book',
 
       },
       {
         userId:users[4].id,
-        url: '../../tracks/all-we-got.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/all-we-got.mp3',
         title: 'All We Got',
-        albumImageUrl: 'album-images/coloring-book.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/coloring-book.jpg',
         albumTitle: 'Coloring Book',
 
       },
       {
         userId:users[5].id,
-        url: '../../tracks/deja-vu.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/deja-vu.mp3',
         title: 'deja vu',
-        albumImageUrl: 'album-images/sour.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/sour.jpg',
         albumTitle: 'SOUR',
 
       },
       {
         userId:users[5].id,
-        url: '../../tracks/traitor.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/traitor.mp3',
         title: 'traitor',
-        albumImageUrl: 'album-images/sour.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/sour.jpg',
         albumTitle: 'SOUR',
 
       },
       {
         userId:users[6].id,
-        url: '../../tracks/interlude.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/interlude.mp3',
         title: 'i n t e r l u d e',
-        albumImageUrl: 'album-images/the-offseason.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/the-offseason.jpg',
         albumTitle: 'The Offseason',
 
       },
       {
         userId:users[6].id,
-        url: '../../tracks/my-life.mp3',
+        url: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/my-life.mp3',
         title: 'm y . l i f e',
-        albumImageUrl: 'album-images/the-offseason.jpg',
+        albumImageUrl: 'https://music-storm-bucket.s3.us-west-1.amazonaws.com/the-offseason.jpg',
         albumTitle: 'The Offseason',
 
       },
