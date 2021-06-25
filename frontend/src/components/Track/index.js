@@ -22,22 +22,18 @@ const Track = () => {
         dispatch(getAllUserTracks(id))
     }, [dispatch, id])
 
-    console.log(currTracks)
     return (
         <div>
             {currTracks?.map(track => (
                 <div>
-                    <p>{currArtist.artistName}</p>
+                    <p>{currArtist?.artistName}</p>
                     <p>{track.title}</p>
                     <p>{track.albumTitle}</p>
                     <img
                     style={{ width: "150px", height: "150px", objectFit: "cover" }}
                     src={`/${track?.albumImageUrl}`}
                     alt='albumImage'/>
-
-                    <audio controls>
-                        <source src={track.url} type="type/mpeg"/>
-                    </audio>
+                    <audio controls src={track.url} type="type/mpeg" />
                 </div>
             ))}
         </div>

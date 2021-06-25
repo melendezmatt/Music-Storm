@@ -23,17 +23,11 @@ const UserProfile = () => {
     let content = null;
     if (showEditForm && (loggedInUser?.id === currArtist?.id)) {
         content = (
-            <>
-                <h3> EDIT FORM OPEN!!!!</h3>
-                <UpdateProfile user={currArtist} hideForm={() => setShowEditForm(false)} />
-            </>
+            <UpdateProfile user={currArtist} hideForm={() => setShowEditForm(false)} />
         )
     } else {
         content = (
-            <>
-                <h3>EDIT FORM CLOSED!!!! where track component would be!!</h3>
-                <Track />
-            </>
+            <Track />
         )
     }
 
