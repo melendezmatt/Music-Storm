@@ -20,6 +20,7 @@ const UserProfile = () => {
         setShowEditForm(false)
     }, [dispatch, id])
 
+    console.log(currArtist)
     let content = null;
     if (showEditForm && (loggedInUser?.id === currArtist?.id)) {
         content = (
