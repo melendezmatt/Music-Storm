@@ -40,7 +40,15 @@ const Track = () => {
                     src={track.albumImageUrl}
                     alt='albumImage'/>
                     <audio controls src={track.url} type="type/mpeg"/>
-                    { (loggedInUser?.id === currArtist?.id) ? <><button>Edit</button> <button>Delete Track</button></>: null}
+                    { (loggedInUser?.id === currArtist?.id) ?
+                        <>
+                        <NavLink to={`/users/${id}/tracks/${track.id}/edit`}>
+                            <button>Edit</button>
+                        </NavLink>
+                        <NavLink to={`/users/${id}/tracks/${track.id}/delete`}>
+                            <button>Delete Track</button>
+                        </NavLink>
+                        </>: null}
                 </div>
             ))}
         </div>

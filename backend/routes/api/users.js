@@ -75,7 +75,7 @@ router.put(
         bio,
         artistName
     })
-    console.log(currUser)
+
     res.json(currUser)
   })
 )
@@ -97,12 +97,49 @@ router.get(
 router.get(
   '/:id/tracks/:trackId',
   asyncHandler(async (req, res) => {
-    const {trackId} = req.params;
+    const { trackId } = req.params;
     const currTrack = await Track.findByPk(trackId);
     res.json(currTrack)
   })
 );
 
+router.put(
+  '/:id/tracks/:trackId',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { trackId } = req.params;
+    const track = await Track.findByPk(trackId);
+
+    ///singleMulterUpload, url and image
+
+    ///
+    res.json(currTrack)
+  })
+);
+
+router.post(
+  '/:id/upload',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const user = User.findByPk(id);
+
+    //singleMulterUpload, url and image
+    res.json(user)
+  })
+  );
+
+router.delete(
+  '/:id/tracks/:trackId',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { trackId } = req.params;
+    const track = await Track.findByPk(trackId);
+
+    await Track.destory(track)
+    res.json(currTrack)
+  })
+)
 
 
 module.exports = router;

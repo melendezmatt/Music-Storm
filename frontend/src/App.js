@@ -9,6 +9,8 @@ import UsersContainer from "./components/UsersContainer";
 import UserProfile from "./components/UserProfile";
 import UploadTrack from "./components/UploadTrack";
 import SingleTrack from "./components/SingleTrack";
+import EditTrack from "./components/EditTrack";
+import DeleteTrack from "./components/DeleteTrack";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +42,12 @@ function App() {
           </Route>
           <Route exact path="/users/:id/tracks/:trackId">
             <SingleTrack />
+          </Route>
+          <Route exact path="/users/:id/tracks/:trackId/edit">
+            <EditTrack />
+          </Route>
+          <Route exact path="/users/:id/tracks/:trackId/delete">
+            <DeleteTrack />
           </Route>
         </Switch>
       )}

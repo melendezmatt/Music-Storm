@@ -31,7 +31,6 @@ const UserProfile = () => {
         )
     }
 
-
     return (
         <>
             <div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, NavLink } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -69,6 +69,9 @@ function SignupFormPage() {
           required
         />
       </label>
+      <NavLink to="/login">
+        <p>Already Have An Account?</p>
+      </NavLink>
       <button type="submit">Sign Up</button>
     </form>
   );

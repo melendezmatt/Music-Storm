@@ -75,6 +75,20 @@ export const getOneTrack = (id, trackId) => async (dispatch) => {
     }
 };
 
+export const editOneTrack = (id, payload) => async (dispatch) => {
+    const res = await csrfFetch(`/api/users/${id}/tracks/${payload.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      const track = await res.json();
+      dispatch(setOneTrack(track));
+      return track
+    }
+};
+
+
 const initialState = {}
 
 const usersReducer = (state = initialState, action) => {

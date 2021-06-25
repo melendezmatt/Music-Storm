@@ -25,6 +25,11 @@ function Navigation({ isLoaded }){
             Sign Up
           </button>
         </NavLink>
+        <NavLink to="/demo">
+          <button>
+            Demo User
+          </button>
+        </NavLink>
       </>
     );
   }
