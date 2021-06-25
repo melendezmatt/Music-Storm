@@ -94,4 +94,15 @@ router.get(
   })
 );
 
+router.get(
+  '/:id/tracks/:trackId',
+  asyncHandler(async (req, res) => {
+    const {trackId} = req.params;
+    const currTrack = await Track.findByPk(trackId);
+    res.json(currTrack)
+  })
+);
+
+
+
 module.exports = router;

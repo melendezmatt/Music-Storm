@@ -41,7 +41,14 @@ function Navigation({ isLoaded }){
       </li>
       <li>
         <NavLink exact to="/users">
-            Users
+          <button>
+            Featured Artists
+          </button>
+        </NavLink>
+        <NavLink exact to={`/users/${sessionUser?.id}/upload`}>
+          <button>
+            Upload
+          </button>
         </NavLink>
       </li>
     </ul>

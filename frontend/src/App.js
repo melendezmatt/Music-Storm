@@ -7,6 +7,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import UsersContainer from "./components/UsersContainer";
 import UserProfile from "./components/UserProfile";
+import UploadTrack from "./components/UploadTrack";
+import SingleTrack from "./components/SingleTrack";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +34,12 @@ function App() {
           </Route>
           <Route exact path="/users/:id">
             <UserProfile />
+          </Route>
+          <Route exact path="/users/:id/upload">
+            <UploadTrack />
+          </Route>
+          <Route exact path="/users/:id/tracks/:trackId">
+            <SingleTrack />
           </Route>
         </Switch>
       )}
