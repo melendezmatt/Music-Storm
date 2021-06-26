@@ -4,7 +4,7 @@ const SET_USERS = 'users/SET_USERS';
 const GET_USER = 'users/GET_USER';
 const GET_TRACKS = 'users/GET_TRACKS'
 const GET_SINGLE = 'users/GET_SINGLE'
-const REMOVE_SINGLE = 'user/REMOVE_SINGLE'
+const REMOVE_SINGLE = 'users/REMOVE_SINGLE'
 
 const setUsers = (users) => ({
     type:SET_USERS,
@@ -103,9 +103,9 @@ export const removeOneTrack = (id, trackId) => async (dispatch) => {
     if (res.ok) {
         const track = await res.json()
         dispatch(deleteOneTrack(track))
+        return track;
     }
 }
-
 
 const initialState = {}
 

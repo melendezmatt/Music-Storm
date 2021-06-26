@@ -29,24 +29,27 @@ const Track = () => {
                 <div>
                     <p>{currArtist?.artistName}</p>
 
-                    <p>{track.albumTitle}</p>
-                    <p>{track.id}</p>
+                    <p>{track?.albumTitle}</p>
+                    <p>{track?.id}</p>
 
-                    <NavLink to={`/users/${id}/tracks/${track.id}`}>
-                        <p>{track.title}</p>
+                    <NavLink to={`/users/${id}/tracks/${track?.id}`}>
+                        <p>{track?.title}</p>
                     </NavLink>
                     <img
                     style={{ width: "150px", height: "150px", objectFit: "cover" }}
-                    src={track.albumImageUrl}
+                    src={track?.albumImageUrl}
                     alt='albumImage'/>
-                    <audio controls src={track.url} type="type/mpeg"/>
+                    <audio controls src={track?.url} type="type/mpeg"/>
                     { (loggedInUser?.id === currArtist?.id) ?
                         <>
-                        <NavLink to={`/users/${id}/tracks/${track.id}/edit`}>
+                        <NavLink to={`/users/${id}/tracks/${track?.id}/edit`}>
                             <button>Edit</button>
                         </NavLink>
-                        <NavLink to={`/users/${id}/tracks/${track.id}/delete`}>
+                        <NavLink to={`/users/${id}/tracks/${track?.id}/delete`}>
                             <button>Delete Track</button>
+                        </NavLink>
+                        <NavLink to={`/users/${id}/tracks/${track?.id}`}>
+                            <button>Comments</button>
                         </NavLink>
                         </>: null}
                 </div>

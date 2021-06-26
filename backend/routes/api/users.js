@@ -135,9 +135,9 @@ router.delete(
   requireAuth,
   asyncHandler(async (req, res) => {
     const { trackId } = req.params;
-    const track = await Track.findByPk(trackId);
-
-    await Track.destroy(track)
+    const parsed = parseInt(trackId)
+    const track = await Track.findByPk(parsed);
+    await track.destroy()
     res.send(200)
   })
 )
