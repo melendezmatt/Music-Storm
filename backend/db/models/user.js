@@ -41,6 +41,18 @@ module.exports = (sequelize, DataTypes) => {
     artistName: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    govName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    headerImageUrl: {
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   },
   {

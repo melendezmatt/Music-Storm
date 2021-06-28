@@ -32,28 +32,30 @@ const UserProfile = () => {
     }
 
     return (
-        <div className='header-container'>
-            <div className='header-image'>
-                <img
-                style={{ width: "1000px", height: "300px", objectFit: "cover" }}
-                src={currArtist?.headerImageUrl}
-                alt='headerImage'>
-                </img>
-            </div>
-            <div>
-                <h2> {currArtist?.artistName}</h2>
-                <h3> {currArtist?.govName}</h3>
-                <img
-                    style={{ width: "200px", height: "200px", borderRadius: "50%", objectFit: "cover" }}
-                    src={currArtist?.profileImageUrl}
-                    alt='profileImage'>
-                </img>
-                { (loggedInUser?.id === currArtist?.id) ? <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button> : null}
-            </div>
-            <div>
-                <p> {currArtist?.location} </p>
-                <p> {currArtist?.bio} </p>
-                {content}
+        <div className='profile-container'>
+            <div className='header-container'>
+                <div className='header-image'>
+                    <img
+                    style={{ width: "1000px", height: "300px", objectFit: "cover" }}
+                    src={currArtist?.headerImageUrl}
+                    alt='headerImage'>
+                    </img>
+                </div>
+                <div>
+                    <h2> {currArtist?.artistName}</h2>
+                    <h3> {currArtist?.govName}</h3>
+                    <img
+                        style={{ width: "200px", height: "200px", borderRadius: "50%", objectFit: "cover" }}
+                        src={currArtist?.profileImageUrl}
+                        alt='profileImage'>
+                    </img>
+                    { (loggedInUser?.id === currArtist?.id) ? <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button> : null}
+                </div>
+                <div>
+                    <p> {currArtist?.location} </p>
+                    <p> {currArtist?.bio} </p>
+                    {content}
+                </div>
             </div>
         </div>
     )
