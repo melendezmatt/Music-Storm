@@ -24,17 +24,15 @@ const Track = () => {
     }, [dispatch, id])
 
     return (
-        <div>
+        <div className='track-container'>
             {currTracks?.map(track => (
-                <div>
-                    <p>{currArtist?.artistName}</p>
-
-                    <p>{track?.albumTitle}</p>
-                    <p>{track?.id}</p>
-
-                    <NavLink to={`/users/${id}/tracks/${track?.id}`}>
-                        <p>{track?.title}</p>
-                    </NavLink>
+                <div className='trackDiv'>
+                    <div className='infoDiv'>
+                        <p>{currArtist?.artistName} - {track?.albumTitle}</p>
+                        <NavLink to={`/users/${id}/tracks/${track?.id}`}>
+                            <p>{track?.title}</p>
+                        </NavLink>
+                    </div>
                     <img
                     style={{ width: "150px", height: "150px", objectFit: "cover" }}
                     src={track?.albumImageUrl}

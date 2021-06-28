@@ -107,6 +107,16 @@ export const removeOneTrack = (id, trackId) => async (dispatch) => {
     }
 }
 
+export const createTrack = (payload) => async (dispatch) => {
+    const res = await csrfFetch(`/api/users/${payload.id}`)
+
+    if (res.ok) {
+        const track = await res.json()
+        dispatch(setOneTrack(track))
+        return track
+    }
+}
+
 const initialState = {}
 
 const usersReducer = (state = initialState, action) => {

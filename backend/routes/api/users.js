@@ -5,7 +5,7 @@ const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { User, Track } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
-const { restoreUser } = require('../../../frontend/src/store/session');
+const { restoreUser } = require('../../utils/auth');
 const router = express.Router();
 
 // potential trackRouter
@@ -64,7 +64,7 @@ router.get(
 
 router.put(
   '/:id',
-  restoreUser, 
+  restoreUser,
   requireAuth,
   asyncHandler(async (req, res) => {
     const id = req.params.id

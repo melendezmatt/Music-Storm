@@ -1,7 +1,7 @@
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, useHistory  } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { editOneTrack, getOneTrack, getOneUser } from "../../store/users";
+import { createTrack, getOneUser } from "../../store/users";
 import './UploadTrack.css'
 
 // if (!loggedInUser){
@@ -18,6 +18,8 @@ import './UploadTrack.css'
 
 
 const UploadTrack = () => {
+    const dispatch = useDispatch()
+    const history = useHistory()
     const { id } = useParams()
     const loggedInUser = useSelector((state) => state.session.user)
     const currArtist = useSelector((state) => {

@@ -13,3 +13,19 @@ h1 {
     text-decoration: underline;
     margin: 0;
 }
+
+.user-square a {
+    color: white;
+}
+
+.user-square {
+    z-index: 0;
+    transition: 0.2s all;
+}
+
+.user-square:hover {
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.2);
+    transform: scale(1.05);
+    background-color: lightgray;
+}

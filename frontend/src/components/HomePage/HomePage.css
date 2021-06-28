@@ -1,0 +1,16 @@
+.landingImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.info {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    margin-top: 10px; 
+}
