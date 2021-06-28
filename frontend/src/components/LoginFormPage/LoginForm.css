@@ -2,4 +2,21 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin: 80px auto;
+}
+
+label{
+    font-size: 14px;
+    font-weight: bold;
+    font-family:Helvetica,Arial,sans-serif;
+    color: #000000;
+}
+
+.btn.btn-primary {
+    background-color: #FF9533;
+    border: none;
+    margin: 15px;
+    padding: 10px;
+    height: 40px;
+    width: 120px;
 }

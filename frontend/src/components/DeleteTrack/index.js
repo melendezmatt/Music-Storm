@@ -8,26 +8,23 @@ const DeleteTrack = () => {
     const history = useHistory()
     const { id, trackId } = useParams()
     const loggedInUser = useSelector((state) => state.session.user)
-    const currArtist = useSelector((state) => {
-        return state.users[id]
-    })
 
     const currTrack = useSelector((state) => {
         return state.users.track
     })
 
+    if (!currTrack) {
+        history.push(`/users/${loggedInUser.id}`)
+    }
+
     useEffect(() => {
-        dispatch(getOneUser(id))
-        dispatch(getOneTrack(id, trackId))
+        dispatch(getOneUser(id));
+        dispatch(getOneTrack(id, trackId));
     }, [dispatch, id, trackId])
 
     const deleteTrack =  async (e) => {
         e.preventDefault()
         await dispatch(removeOneTrack(id, trackId))
-    }
-
-    if (!currTrack) {
-        history.push(`/users/${loggedInUser.id}`)
     }
 
     return (
@@ -40,7 +37,6 @@ const DeleteTrack = () => {
             <NavLink to={`/users/${id}/tracks/${trackId}`}>
                 <button type="button" > Cancel </button>
             </NavLink>
-
         </div>
     )
 }

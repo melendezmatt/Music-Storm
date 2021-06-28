@@ -1,6 +1,30 @@
 .nav-bar {
-    display:flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #333;
+    height: 54px;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    min-width: 150px;
+    color: white;
+    background-color: #333;
+    font-family: Interstate, Lucida Grande, Arial, sans-serif;
+    font-weight: 100;
+    border:none;
+}
+
+.btn-upload {
+    background-color: #FF9533;
+}
+
+.profile-dropdown {
+    margin-top: 8px;
 }

@@ -51,7 +51,7 @@ function LoginFormPage() {
       <NavLink to="/signup">
         <p>Don't Have An Account Yet?</p>
       </NavLink>
-      <button type="submit">Log In</button>
+      <button className="btn btn-primary" type="submit">Log In</button>
     </form>
   );
 }

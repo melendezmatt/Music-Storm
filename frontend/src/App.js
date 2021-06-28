@@ -11,6 +11,7 @@ import UploadTrack from "./components/UploadTrack";
 import SingleTrack from "./components/SingleTrack";
 import EditTrack from "./components/EditTrack";
 import DeleteTrack from "./components/DeleteTrack";
+import HomePage from "./components/HomePage"
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,9 @@ function App() {
       <Navigation className='nav-bar' isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
           <Route exact path="/login">
             <LoginFormPage />
           </Route>

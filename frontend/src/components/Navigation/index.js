@@ -16,17 +16,17 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <NavLink to="/login">
-          <button>
+          <button className="btn">
             Log In
           </button>
         </NavLink>
         <NavLink to="/signup">
-          <button>
+          <button className="btn">
             Sign Up
           </button>
         </NavLink>
         <NavLink to="/demo">
-          <button>
+          <button className="btn">
             Demo User
           </button>
         </NavLink>
@@ -35,28 +35,30 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul className='nav-bar'>
-      <li>
+    <div className='nav-bar'>
+      <div>
         <NavLink exact to="/">
-          <button>
+          <button className="btn">
             Home
           </button>
         </NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-      <li>
-        <NavLink exact to="/users">
-          <button>
-            Featured Artists
-          </button>
-        </NavLink>
-        <NavLink exact to={`/users/${sessionUser?.id}/upload`}>
-          <button>
+      </div>
+      <div>
+      <NavLink exact to={`/users/${sessionUser?.id}/upload`}>
+          <button className="btn btn-upload">
             Upload
           </button>
         </NavLink>
-      </li>
-    </ul>
+      </div>
+      <div>
+        <NavLink exact to="/users">
+          <button className="btn">
+            Featured Artists
+          </button>
+        </NavLink>
+      </div>
+      {isLoaded && sessionLinks}
+    </div>
   );
 }
 
