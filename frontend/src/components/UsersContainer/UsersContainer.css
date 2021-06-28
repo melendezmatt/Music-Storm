@@ -2,4 +2,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin: 20px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+    color: oldlace;
+    text-decoration: underline;
+    margin: 0;
 }

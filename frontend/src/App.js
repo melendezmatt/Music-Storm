@@ -35,7 +35,6 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route exact path="/users">
-            <h1> Featured Artists</h1>
             <UsersContainer />
           </Route>
           <Route exact path="/users/:id">
