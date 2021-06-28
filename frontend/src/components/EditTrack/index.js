@@ -54,7 +54,9 @@ const EditTrack = () => {
             <p>{currTrack?.title}</p>
             <p>{currTrack?.albumImageUrl}</p>
             <p>{currTrack?.url}</p>
-            <form onSubmit={handleSubmit}>
+            <form
+            style={{ display: "flex", flexFlow: "column" }}
+            onSubmit={handleSubmit}>
                 <label>Title</label>
                 <input
                 type="text"

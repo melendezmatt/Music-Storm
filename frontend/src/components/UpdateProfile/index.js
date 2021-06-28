@@ -36,7 +36,9 @@ const UpdateProfile = ({user, hideForm}) => {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
+        <form
+        style={{ display: "flex", flexFlow: "column" }}
+        onSubmit={handleSubmit}>
         <label>Username</label>
         <input
           type="text"
