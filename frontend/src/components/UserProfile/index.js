@@ -20,7 +20,6 @@ const UserProfile = () => {
         setShowEditForm(false)
     }, [dispatch, id])
 
-    console.log(currArtist)
     let content = null;
     if (showEditForm && (loggedInUser?.id === currArtist?.id)) {
         content = (
@@ -32,12 +31,11 @@ const UserProfile = () => {
         )
     }
 
-
     return (
         <>
             <div>
-                <h1> {currArtist?.artistName}</h1>
-                <h2> {currArtist?.bio} </h2>
+                <h2> {currArtist?.artistName}</h2>
+                <h3> {currArtist?.bio} </h3>
                 <img
                     style={{ width: "200px", height: "200px", borderRadius: "50%", objectFit: "cover" }}
                     src={currArtist?.profileImageUrl}

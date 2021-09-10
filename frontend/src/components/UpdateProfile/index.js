@@ -32,12 +32,10 @@ const UpdateProfile = ({user, hideForm}) => {
     const handleCancelClick = (e) => {
         e.preventDefault();
         hideForm();
-      };
+    };
 
     return (
         <>
-        <h4>inside update form!!</h4>
-        <h5>currently updating {user.artistName}'s profile!!</h5>
         <form onSubmit={handleSubmit}>
         <label>Username</label>
         <input

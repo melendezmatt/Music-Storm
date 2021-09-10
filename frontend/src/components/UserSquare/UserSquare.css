@@ -3,7 +3,8 @@
     border: 10px;
 }
 
-.profileLink {
-    display: flex; 
+.profileLink a{
+    display: flex;
     justify-content: center;
+    text-decoration: none;
 }
