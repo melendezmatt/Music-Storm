@@ -5,6 +5,7 @@ const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { User, Track } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+const { restoreUser } = require('../../utils/auth');
 const router = express.Router();
 
 // potential trackRouter
@@ -63,6 +64,7 @@ router.get(
 
 router.put(
   '/:id',
+  restoreUser,
   requireAuth,
   asyncHandler(async (req, res) => {
     const id = req.params.id
@@ -105,6 +107,7 @@ router.get(
 
 router.put(
   '/:id/tracks/:trackId',
+  restoreUser,
   requireAuth,
   asyncHandler(async (req, res) => {
     const { trackId } = req.params;
@@ -119,6 +122,7 @@ router.put(
 
 router.post(
   '/:id/upload',
+  restoreUser,
   requireAuth,
   asyncHandler(async (req, res) => {
     const { id } = req.params;
@@ -132,6 +136,7 @@ router.post(
 
 router.delete(
   '/:id/tracks/:trackId',
+  restoreUser,
   requireAuth,
   asyncHandler(async (req, res) => {
     const { trackId } = req.params;

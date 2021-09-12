@@ -29,7 +29,6 @@ const DeleteTrack = () => {
 
     return (
         <div>
-            <p>inside delete track</p>
             <p>{currTrack?.albumTitle}</p>
             <p>{currTrack?.title}</p>
             <p> Are you sure you want to delete {currTrack?.title}? This will be permanent.</p>

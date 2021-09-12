@@ -1,6 +1,7 @@
 import { editUser } from '../../store/users';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import './UpdateProfile.css'
 const UpdateProfile = ({user, hideForm}) => {
     const dispatch = useDispatch()
     const [username, setUsername] = useState(user.username)
@@ -36,7 +37,9 @@ const UpdateProfile = ({user, hideForm}) => {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
+        <form
+        style={{ display: "flex", flexFlow: "column", alignContent: 'center'}}
+        onSubmit={handleSubmit}>
         <label>Username</label>
         <input
           type="text"
@@ -59,8 +62,8 @@ const UpdateProfile = ({user, hideForm}) => {
           onChange={updateBio}
         />
 
-        <button type="submit">Update Your profile</button>
-        <button type="button" onClick={handleCancelClick}>Cancel</button>
+        <button style={{width: '150px'}} type="submit">Update Your profile</button>
+        <button style={{width: '150px'}} type="button" onClick={handleCancelClick}>Cancel</button>
         </form>
 
         </>

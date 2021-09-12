@@ -16,14 +16,16 @@ const UsersContainer = () => {
     }, [dispatch])
 
     return (
-        <>
+        <div>
         <h1> Featured Artists </h1>
-        <div className='users-container'>
-             {usersArray.map((user) => (
-                <UserSquare user={user} key={user.id}/>
-            ))}
+            <div className='users-container'>
+                {usersArray.map((user) => (
+                    <div className='user-square'>
+                        <UserSquare user={user} key={user.id}/>
+                    </div>
+                ))}
+            </div>
         </div>
-        </>
     )
 }
 

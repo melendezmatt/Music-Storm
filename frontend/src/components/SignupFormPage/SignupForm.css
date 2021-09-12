@@ -3,3 +3,9 @@
     flex-direction: column;
     align-items: center;
 }
+
+.imgDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
